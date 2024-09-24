@@ -1,8 +1,75 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faChevronRight, faEarthAmericas, faEnvelope, faGraduationCap, faLaptopCode, faMobileScreen, faPlay, faScrewdriverWrench, faTv, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+// import { ProjectList } from '@/datas/ProjectList';
+import Card from '@/components/Card';
+
+
+
 
 export default function Home() {
+  // interface card {
+  //   devices: Array<string>,
+  //   visibility: string,
+  //   createdTime: number,
+  //   title: string,
+  //   language: Array<string>,
+  //   imageSource: string,
+  //   imageAlt: string,
+  //   description: string,
+  //   hrefTarget: string,
+  // };
+  const DataProjectList = [
+    {
+      devices: ["android", "website"],
+      visibility: "read-only",
+      createdTime: 2024,
+      title: "Under-construction Project",
+      language: ["html", "css", "js", "jquery", "data-table", "java", "kotlin"],
+      imageSource: "./under-construction.jpg",
+      imageAlt: "under-construction",
+      description:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus modi assumenda sunt totam neque in, esse sint, animi rerum est nesciunt inventore quibusdam veniam error illum quo sequi nihil veritatis!",
+      hrefTarget: "#",
+    },
+    {
+      devices: ["android", "website"],
+      visibility: "read-only",
+      createdTime: 2024,
+      title: "Under-construction Project",
+      language: ["html", "css", "js", "jquery", "data-table", "java", "kotlin"],
+      imageSource: "./under-construction.jpg",
+      imageAlt: "under-construction",
+      description:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus modi assumenda sunt totam neque in, esse sint, animi rerum est nesciunt inventore quibusdam veniam error illum quo sequi nihil veritatis!",
+      hrefTarget: "#",
+    },
+    {
+      devices: ["android", "website"],
+      visibility: "read-only",
+      createdTime: 2024,
+      title: "Under-construction Project",
+      language: ["html", "css", "js", "jquery", "data-table", "java", "kotlin"],
+      imageSource: "./under-construction.jpg",
+      imageAlt: "under-construction",
+      description:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus modi assumenda sunt totam neque in, esse sint, animi rerum est nesciunt inventore quibusdam veniam error illum quo sequi nihil veritatis!",
+      hrefTarget: "#",
+    },
+    {
+      devices: ["android", "website"],
+      visibility: "read-only",
+      createdTime: 2024,
+      title: "Under-construction Project",
+      language: ["html", "css", "js", "jquery", "data-table", "java", "kotlin"],
+      imageSource: "./under-construction.jpg",
+      imageAlt: "under-construction",
+      description:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus modi assumenda sunt totam neque in, esse sint, animi rerum est nesciunt inventore quibusdam veniam error illum quo sequi nihil veritatis!",
+      hrefTarget: "#",
+    },
+  ];
+
   return (
     <div>
       <nav className="container flex-wrap justify-between p-8 mx-auto font-mono text-xs navbar text-light text-slate-400">
@@ -287,7 +354,15 @@ export default function Home() {
           </p>
         </div>
 
-        <ul className="grid grid-cols-1 gap-4 mb-12 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4" id="project-list"> </ul>
+        <ul className="grid grid-cols-1 gap-4 mb-12 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4" id="project-list">
+
+
+          {DataProjectList.map(function (ProjectList) {
+            return <Card devices={ProjectList.devices} visibility={ProjectList.visibility} createdTime={ProjectList.createdTime} title={ProjectList.title} language={ProjectList.language} imageSource={ProjectList.imageSource} imageAlt={ProjectList.imageAlt} description={ProjectList.description} hrefTarget={ProjectList.hrefTarget} />
+          })}
+
+
+        </ul>
       </div>
 
       <div id="biography" className="container flex flex-col justify-center px-8 mx-auto mb-24 font-serif xl:max-w-screen-lg">
@@ -406,6 +481,6 @@ export default function Home() {
           <a className="link link-hover">Tik-Tok</a>
         </nav>
       </footer>
-    </div>
+    </div >
   );
 }
