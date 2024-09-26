@@ -1,4 +1,5 @@
 export default interface ProjectProps {
+    id: number;
     devices: string[];       // Array of device types (e.g., android, website)
     visibility: string;      // Visibility setting (e.g., read-only)
     createdTime: number;     // Year of creation (e.g., 2024)

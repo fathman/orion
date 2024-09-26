@@ -11,13 +11,13 @@ function comaSeparator(arr: Array<string>) {
     return 0;
 }
 
-function compLangunageKBD(language: string) {
-    return <span className="rounded-sm me-2 kbd kbd-xs group-hover:border-gray-400">{language}</span>;
+function compLangunageKBD(language: string, index: number) {
+    return <span key={index} className="rounded-sm me-2 kbd kbd-xs group-hover:border-gray-400">{language}</span>;
 }
 
-export default function Card({ devices, visibility, createdTime, title, language, imageSource, imageAlt, description, hrefTarget }: ProjectProps) {
+export default function Card({ id, devices, visibility, createdTime, title, language, imageSource, imageAlt, description, hrefTarget }: ProjectProps) {
     return (
-        <li className="font-mono transition-all border border-gray-400 card-body hover:border-gray-700 group">
+        <li key={id} className="font-mono transition-all border border-gray-400 card-body hover:border-gray-700 group">
             <div className="head">
                 <div className="flex items-center justify-between mb-4 text-xs align-baseline text-slate-400 group-hover:text-black">
                     <span className="rounded-sm me-2 kbd kbd-xs group-hover:border-gray-400">{visibility}</span>
@@ -33,6 +33,7 @@ export default function Card({ devices, visibility, createdTime, title, language
             <a href="#links">
                 <figure className="mb-2 overflow-hidden">
                     <Image
+                        priority
                         className="transition-all group-hover:scale-105 size-full"
                         src={imageSource}
                         alt={imageAlt}
@@ -43,8 +44,8 @@ export default function Card({ devices, visibility, createdTime, title, language
             </a>
 
             <p className="mb-2 text-xs line-clamp-1 text-slate-500 group-hover:text-black">
-                {language.map(function (lang) {
-                    return compLangunageKBD(lang);
+                {language.map(function (lang, index) {
+                    return compLangunageKBD(lang, index);
                 })}
             </p>
             <p className="mb-4 text-sm line-clamp-3 text-slate-600 group-hover:text-slate-950">

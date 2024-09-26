@@ -308,8 +308,8 @@ export default function Home() {
         <ul className="grid grid-cols-1 gap-4 mb-12 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4" id="project-list">
 
 
-          {DataProjectList.map(function (ProjectList, index) {
-            return <Card key={"project" + (index + 1)} devices={ProjectList.devices} visibility={ProjectList.visibility} createdTime={ProjectList.createdTime} title={ProjectList.title} language={ProjectList.language} imageSource={ProjectList.imageSource} imageAlt={ProjectList.imageAlt} description={ProjectList.description} hrefTarget={ProjectList.hrefTarget} />
+          {DataProjectList.map(function (ProjectList) {
+            return <Card key={ProjectList.id} id={ProjectList.id} devices={ProjectList.devices} visibility={ProjectList.visibility} createdTime={ProjectList.createdTime} title={ProjectList.title} language={ProjectList.language} imageSource={ProjectList.imageSource} imageAlt={ProjectList.imageAlt} description={ProjectList.description} hrefTarget={ProjectList.hrefTarget} />
           })}
 
 
@@ -357,15 +357,15 @@ export default function Home() {
           <span className="inline-block min-w-28 text-nowrap text-slate-500"><FontAwesomeIcon icon={faTv} className='w-4 me-4' />Web Skill</span>
           <span className="hidden min-[500px]:inline-block mx-2">:</span>
           <div className="flex flex-wrap gap-2 xl:justify-center items-center">
-            <Image width={65} height={18} className="h-5" alt="html5" src={badgeHtml5} />
-            <Image width={57} height={18} className="h-5" alt="CSS3" src={badgeCss3} />
-            <Image width={81} height={18} className="h-5" alt="Javascript" src={badgeJavascript} />
-            <Image width={65} height={18} className="h-5" alt="JQuery" src={badgeJquery} />
-            <Image width={81} height={18} className="h-5" alt="Bootstrap" src={badgeBootstrap} />
-            <Image width={89} height={18} className="h-5" alt="Code Igniter"
+            <Image width={65} height={18} style={{ width: "auto", height: "auto" }} className="h-5" alt="html5" src={badgeHtml5} />
+            <Image width={57} height={18} style={{ width: "auto", height: "auto" }} className="h-5" alt="CSS3" src={badgeCss3} />
+            <Image width={81} height={18} style={{ width: "auto", height: "auto" }} className="h-5" alt="Javascript" src={badgeJavascript} />
+            <Image width={65} height={18} style={{ width: "auto", height: "auto" }} className="h-5" alt="JQuery" src={badgeJquery} />
+            <Image width={81} height={18} style={{ width: "auto", height: "auto" }} className="h-5" alt="Bootstrap" src={badgeBootstrap} />
+            <Image width={89} height={18} style={{ width: "auto", height: "auto" }} className="h-5" alt="Code Igniter"
               src={badgeCodeIgniter}
             />
-            <Image width={73} height={18} className="h-5" alt="MySql" src={badgeMysql} />
+            <Image width={73} height={18} style={{ width: "auto", height: "auto" }} className="h-5" alt="MySql" src={badgeMysql} />
           </div>
         </div>
 
@@ -373,12 +373,12 @@ export default function Home() {
           <span className="inline-block min-w-28 text-nowrap text-slate-500"><FontAwesomeIcon icon={faMobileScreen} className='w-4 me-4' />Mobile Skill</span>
           <span className="hidden min-[500px]:inline-block mx-2">:</span>
           <div className="flex flex-wrap gap-2 xl:justify-center items-center">
-            <Image width={109} height={18} className="h-5" alt="AndroiMod Studio"
+            <Image width={109} height={18} style={{ width: "auto", height: "auto" }} className="h-5" alt="AndroiMod Studio"
               src={badgeAndroidStudio}
             />
-            <Image width={53} height={18} className="h-5" alt="Java" src={badgeJava} />
-            <Image width={59} height={18} className="h-5" alt="Kotlin" src={badgeKotlin} />
-            <Image width={59} height={18} className="h-5" alt="MQTT" src={badgeMqtt} />
+            <Image width={53} height={18} style={{ width: "auto", height: "auto" }} className="h-5" alt="Java" src={badgeJava} />
+            <Image width={59} height={18} style={{ width: "auto", height: "auto" }} className="h-5" alt="Kotlin" src={badgeKotlin} />
+            <Image width={59} height={18} style={{ width: "auto", height: "auto" }} className="h-5" alt="MQTT" src={badgeMqtt} />
           </div>
         </div>
 
