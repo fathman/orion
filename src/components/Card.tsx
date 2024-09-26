@@ -15,18 +15,6 @@ function compLangunageKBD(language: string) {
     return <span className="rounded-sm me-2 kbd kbd-xs group-hover:border-gray-400">{language}</span>;
 }
 
-// interface CardProps {
-//     devices: Array<string>;
-//     visibility: string;
-//     createdTime: number;
-//     title: string;
-//     language: Array<string>;
-//     imageSource: string;
-//     imageAlt: string;
-//     description: string;
-//     hrefTarget: string;
-// }
-
 export default function Card({ devices, visibility, createdTime, title, language, imageSource, imageAlt, description, hrefTarget }: ProjectProps) {
     return (
         <li className="font-mono transition-all border border-gray-400 card-body hover:border-gray-700 group">

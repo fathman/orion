@@ -6,6 +6,18 @@ import Card from '@/components/Card';
 import Image from 'next/image';
 
 
+import badgeHtml5 from "../../public/images/badges/badge-html-5.svg";
+import badgeCss3 from "../../public/images/badges/badge-css-3.svg";
+import badgeJavascript from "../../public/images/badges/badge-javascript.svg";
+import badgeJquery from "../../public/images/badges/badge-jquery.svg";
+import badgeBootstrap from "../../public/images/badges/badge-bootstrap.svg";
+import badgeCodeIgniter from "../../public/images/badges/badge-code-igniter.svg";
+import badgeMysql from "../../public/images/badges/badge-mysql.svg";
+import badgeAndroidStudio from "../../public/images/badges/badge-android-studio.svg";
+import badgeJava from "../../public/images/badges/badge-java.svg";
+import badgeKotlin from "../../public/images/badges/badge-kotlin.svg";
+import badgeMqtt from "../../public/images/badges/badge-mqtt.svg";
+
 
 export default function Home() {
 
@@ -345,15 +357,15 @@ export default function Home() {
           <span className="inline-block min-w-28 text-nowrap text-slate-500"><FontAwesomeIcon icon={faTv} className='w-4 me-4' />Web Skill</span>
           <span className="hidden min-[500px]:inline-block mx-2">:</span>
           <div className="flex flex-wrap gap-2 xl:justify-center items-center">
-            <Image width={65} height={18} className="h-5" alt="html5" src="/images/badge-html-5.svg" />
-            <Image width={57} height={18} className="h-5" alt="CSS3" src="/images/badge-css-3.svg" />
-            <Image width={81} height={18} className="h-5" alt="Javascript" src="/images/badge-javascript.svg" />
-            <Image width={65} height={18} className="h-5" alt="JQuery" src="/images/badge-jquery.svg" />
-            <Image width={81} height={18} className="h-5" alt="Bootstrap" src="/images/badge-bootstrap.svg" />
+            <Image width={65} height={18} className="h-5" alt="html5" src={badgeHtml5} />
+            <Image width={57} height={18} className="h-5" alt="CSS3" src={badgeCss3} />
+            <Image width={81} height={18} className="h-5" alt="Javascript" src={badgeJavascript} />
+            <Image width={65} height={18} className="h-5" alt="JQuery" src={badgeJquery} />
+            <Image width={81} height={18} className="h-5" alt="Bootstrap" src={badgeBootstrap} />
             <Image width={89} height={18} className="h-5" alt="Code Igniter"
-              src="/images/badge-code-igniter.svg"
+              src={badgeCodeIgniter}
             />
-            <Image width={73} height={18} className="h-5" alt="MySql" src="/images/badge-mysql.svg" />
+            <Image width={73} height={18} className="h-5" alt="MySql" src={badgeMysql} />
           </div>
         </div>
 
@@ -362,11 +374,11 @@ export default function Home() {
           <span className="hidden min-[500px]:inline-block mx-2">:</span>
           <div className="flex flex-wrap gap-2 xl:justify-center items-center">
             <Image width={109} height={18} className="h-5" alt="AndroiMod Studio"
-              src="/images/badge-android-studio.svg"
+              src={badgeAndroidStudio}
             />
-            <Image width={53} height={18} className="h-5" alt="Java" src="/images/badge-java.svg" />
-            <Image width={59} height={18} className="h-5" alt="Kotlin" src="/images/badge-kotlin.svg" />
-            <Image width={59} height={18} className="h-5" alt="MQTT" src="/images/badge-mqtt.svg" />
+            <Image width={53} height={18} className="h-5" alt="Java" src={badgeJava} />
+            <Image width={59} height={18} className="h-5" alt="Kotlin" src={badgeKotlin} />
+            <Image width={59} height={18} className="h-5" alt="MQTT" src={badgeMqtt} />
           </div>
         </div>
 
