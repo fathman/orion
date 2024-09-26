@@ -20,7 +20,18 @@ import badgeMqtt from "../../public/images/badges/badge-mqtt.svg";
 
 
 export default function Home() {
-
+  function _env() {
+    // Mengecek mode aplikasi
+    if (process.env.NODE_ENV === 'development') {
+      return <div>Ini adalah mode Development</div>;
+    } else if (process.env.NODE_ENV === 'production') {
+      return <div>Ini adalah mode Production</div>;
+    } else if (process.env.NODE_ENV === 'test') {
+      return <div>Ini adalah mode Testing</div>;
+    } else {
+      return <div>Mode tidak dikenali</div>;
+    }
+  };
   return (
     <div>
       <nav className="container flex-wrap justify-between p-8 mx-auto font-mono text-xs navbar text-light text-slate-400">
@@ -57,11 +68,13 @@ export default function Home() {
 
       </nav>
       <div className="container my-24 mx-auto px-8 flex flex-col justify-center font-serif xl:min-h-[30rem] xl:text-center">
+
         <p className="mb-2 text-xl font-thin lg:mb-6 md:text-2xl lg:text3xl xl:text-4xl">
           <span className="tooltip tooltip-secondary" data-tip="nickname : thoni"> fuad mahrus fathoni </span>
         </p>
         <p className="mb-4 text-4xl font-black lg:mb-6 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"> Fullstack Developer </p>
 
+        <_env></_env>
         <p className="max-w-3xl mb-4 md:text-xl xl:text-2xl xl:max-w-5xl xl:mx-auto">
           I can create <b>dynamic</b> or <b>custom-built</b> websites tailored to your <b>company&aposs needs</b>,
           <br className="hidden xl:block" />helping your business advance to the next level
@@ -309,7 +322,7 @@ export default function Home() {
 
 
           {DataProjectList.map(function (ProjectList) {
-            return <Card key={ProjectList.id} id={ProjectList.id} devices={ProjectList.devices} visibility={ProjectList.visibility} createdTime={ProjectList.createdTime} title={ProjectList.title} language={ProjectList.language} imageSource={ProjectList.imageSource} imageAlt={ProjectList.imageAlt} description={ProjectList.description} hrefTarget={ProjectList.hrefTarget} />
+            return <Card key={ProjectList.id} id={ProjectList.id} devices={ProjectList.devices} visibility={ProjectList.visibility} createdTime={ProjectList.createdTime} title={ProjectList.title} language={ProjectList.language} imageSource={"/public" + ProjectList.imageSource} imageAlt={ProjectList.imageAlt} description={ProjectList.description} hrefTarget={ProjectList.hrefTarget} />
           })}
 
 
