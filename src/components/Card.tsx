@@ -33,7 +33,6 @@ export default function Card({ id, devices, visibility, createdTime, title, lang
             <a href="#links">
                 <figure className="mb-2 overflow-hidden">
                     <Image
-                        priority
                         className="transition-all group-hover:scale-105 size-full"
                         src={imageSource}
                         alt={imageAlt}

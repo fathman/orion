@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 
-const isDev = process.env.NODE_ENV === 'development';
+// const isDev = process.env.NODE_ENV === 'development';
 
 const nextConfig = {
-    basePath: isDev ?  '' : '/public',
+    // basePath: isDev ?  '' : '/public',
+    // basePath : '/public',
 };
 export default nextConfig;
