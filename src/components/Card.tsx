@@ -1,5 +1,8 @@
 "use client";
 
+import Image from 'next/image';
+import ProjectProps from "@/interfaces/projects/ProjectProps";
+
 function comaSeparator(arr: Array<string>) {
     if (arr.length === 0) return "";
     if (arr.length === 1) return arr[0];
@@ -12,19 +15,19 @@ function compLangunageKBD(language: string) {
     return <span className="rounded-sm me-2 kbd kbd-xs group-hover:border-gray-400">{language}</span>;
 }
 
-interface CardProps {
-    devices: Array<string>;
-    visibility: string;
-    createdTime: number;
-    title: string;
-    language: Array<string>;
-    imageSource: string;
-    imageAlt: string;
-    description: string;
-    hrefTarget: string;
-}
+// interface CardProps {
+//     devices: Array<string>;
+//     visibility: string;
+//     createdTime: number;
+//     title: string;
+//     language: Array<string>;
+//     imageSource: string;
+//     imageAlt: string;
+//     description: string;
+//     hrefTarget: string;
+// }
 
-export default function Card({ devices, visibility, createdTime, title, language, imageSource, imageAlt, description, hrefTarget }: CardProps) {
+export default function Card({ devices, visibility, createdTime, title, language, imageSource, imageAlt, description, hrefTarget }: ProjectProps) {
     return (
         <li className="font-mono transition-all border border-gray-400 card-body hover:border-gray-700 group">
             <div className="head">
@@ -41,10 +44,12 @@ export default function Card({ devices, visibility, createdTime, title, language
             </div>
             <a href="#links">
                 <figure className="mb-2 overflow-hidden">
-                    <img
+                    <Image
                         className="transition-all group-hover:scale-105 size-full"
                         src={imageSource}
                         alt={imageAlt}
+                        width={500}
+                        height={300}
                     />
                 </figure>
             </a>

@@ -1,74 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faChevronRight, faEarthAmericas, faEnvelope, faGraduationCap, faLaptopCode, faMobileScreen, faPlay, faScrewdriverWrench, faTv, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-// import { ProjectList } from '@/datas/ProjectList';
+import DataProjectList from '@/data/DataProjectList';
 import Card from '@/components/Card';
-
+import Image from 'next/image';
 
 
 
 export default function Home() {
-  // interface card {
-  //   devices: Array<string>,
-  //   visibility: string,
-  //   createdTime: number,
-  //   title: string,
-  //   language: Array<string>,
-  //   imageSource: string,
-  //   imageAlt: string,
-  //   description: string,
-  //   hrefTarget: string,
-  // };
-  const DataProjectList = [
-    {
-      devices: ["android", "website"],
-      visibility: "read-only",
-      createdTime: 2024,
-      title: "Under-construction Project",
-      language: ["html", "css", "js", "jquery", "data-table", "java", "kotlin"],
-      imageSource: "./under-construction.jpg",
-      imageAlt: "under-construction",
-      description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus modi assumenda sunt totam neque in, esse sint, animi rerum est nesciunt inventore quibusdam veniam error illum quo sequi nihil veritatis!",
-      hrefTarget: "#",
-    },
-    {
-      devices: ["android", "website"],
-      visibility: "read-only",
-      createdTime: 2024,
-      title: "Under-construction Project",
-      language: ["html", "css", "js", "jquery", "data-table", "java", "kotlin"],
-      imageSource: "./under-construction.jpg",
-      imageAlt: "under-construction",
-      description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus modi assumenda sunt totam neque in, esse sint, animi rerum est nesciunt inventore quibusdam veniam error illum quo sequi nihil veritatis!",
-      hrefTarget: "#",
-    },
-    {
-      devices: ["android", "website"],
-      visibility: "read-only",
-      createdTime: 2024,
-      title: "Under-construction Project",
-      language: ["html", "css", "js", "jquery", "data-table", "java", "kotlin"],
-      imageSource: "./under-construction.jpg",
-      imageAlt: "under-construction",
-      description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus modi assumenda sunt totam neque in, esse sint, animi rerum est nesciunt inventore quibusdam veniam error illum quo sequi nihil veritatis!",
-      hrefTarget: "#",
-    },
-    {
-      devices: ["android", "website"],
-      visibility: "read-only",
-      createdTime: 2024,
-      title: "Under-construction Project",
-      language: ["html", "css", "js", "jquery", "data-table", "java", "kotlin"],
-      imageSource: "./under-construction.jpg",
-      imageAlt: "under-construction",
-      description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus modi assumenda sunt totam neque in, esse sint, animi rerum est nesciunt inventore quibusdam veniam error illum quo sequi nihil veritatis!",
-      hrefTarget: "#",
-    },
-  ];
 
   return (
     <div>
@@ -357,8 +296,8 @@ export default function Home() {
         <ul className="grid grid-cols-1 gap-4 mb-12 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4" id="project-list">
 
 
-          {DataProjectList.map(function (ProjectList) {
-            return <Card devices={ProjectList.devices} visibility={ProjectList.visibility} createdTime={ProjectList.createdTime} title={ProjectList.title} language={ProjectList.language} imageSource={ProjectList.imageSource} imageAlt={ProjectList.imageAlt} description={ProjectList.description} hrefTarget={ProjectList.hrefTarget} />
+          {DataProjectList.map(function (ProjectList, index) {
+            return <Card key={"project" + (index + 1)} devices={ProjectList.devices} visibility={ProjectList.visibility} createdTime={ProjectList.createdTime} title={ProjectList.title} language={ProjectList.language} imageSource={ProjectList.imageSource} imageAlt={ProjectList.imageAlt} description={ProjectList.description} hrefTarget={ProjectList.hrefTarget} />
           })}
 
 
@@ -406,15 +345,15 @@ export default function Home() {
           <span className="inline-block min-w-28 text-nowrap text-slate-500"><FontAwesomeIcon icon={faTv} className='w-4 me-4' />Web Skill</span>
           <span className="hidden min-[500px]:inline-block mx-2">:</span>
           <div className="flex flex-wrap gap-2 xl:justify-center items-center">
-            <img className="h-5" alt="html5" src="https://img.shields.io/badge/-HTML5-E34F26?style=plastic&logo=html5&logoColor=white" />
-            <img className="h-5" alt="CSS3" src="https://img.shields.io/badge/CSS3-1572B6?style=plastic&logo=css3&logoColor=white" />
-            <img className="h-5" alt="Javascript" src="https://img.shields.io/badge/-javascript-f7df1c?style=plastic&logo=javascript&logoColor=black" />
-            <img className="h-5" alt="JQuery" src="https://img.shields.io/badge/jQuery-0769AD?style=plastic&logo=jquery&logoColor=white" />
-            <img className="h-5" alt="Bootstrap" src="https://img.shields.io/badge/-bootstrap-7953b3?style=plastic&logo=javascript&logoColor=white" />
-            <img className="h-5" alt="Code Igniter"
-              src="https://img.shields.io/badge/codeigniter-EF4223?style=plastic&logo=codeigniter&logoColor=white"
+            <Image width={65} height={18} className="h-5" alt="html5" src="/images/badge-html-5.svg" />
+            <Image width={57} height={18} className="h-5" alt="CSS3" src="/images/badge-css-3.svg" />
+            <Image width={81} height={18} className="h-5" alt="Javascript" src="/images/badge-javascript.svg" />
+            <Image width={65} height={18} className="h-5" alt="JQuery" src="/images/badge-jquery.svg" />
+            <Image width={81} height={18} className="h-5" alt="Bootstrap" src="/images/badge-bootstrap.svg" />
+            <Image width={89} height={18} className="h-5" alt="Code Igniter"
+              src="/images/badge-code-igniter.svg"
             />
-            <img className="h-5" alt="MySql" src="https://shields.io/badge/MySQL-lightgrey?logo=mysql&style=plastic&logoColor=white&labelColor=blue" />
+            <Image width={73} height={18} className="h-5" alt="MySql" src="/images/badge-mysql.svg" />
           </div>
         </div>
 
@@ -422,12 +361,12 @@ export default function Home() {
           <span className="inline-block min-w-28 text-nowrap text-slate-500"><FontAwesomeIcon icon={faMobileScreen} className='w-4 me-4' />Mobile Skill</span>
           <span className="hidden min-[500px]:inline-block mx-2">:</span>
           <div className="flex flex-wrap gap-2 xl:justify-center items-center">
-            <img className="h-5" alt="AndroiMod Studio"
-              src="https://img.shields.io/badge/Android%20Studio-239b56?style=plastic&logo=android-studio&logoColor=white"
+            <Image width={109} height={18} className="h-5" alt="AndroiMod Studio"
+              src="/images/badge-android-studio.svg"
             />
-            <img className="h-5" alt="Java" src="https://img.shields.io/badge/Java-cb4335?style=plastic&logo=openjdk&logoColor=white" />
-            <img className="h-5" alt="Kotlin" src="https://img.shields.io/badge/Kotlin-7F52FF?style=plastic&logo=Kotlin&logoColor=white" />
-            <img className="h-5" alt="MQTT" src="https://img.shields.io/badge/MQTT-452661?style=plastic&logo=mqtt&logoColor=white" />
+            <Image width={53} height={18} className="h-5" alt="Java" src="/images/badge-java.svg" />
+            <Image width={59} height={18} className="h-5" alt="Kotlin" src="/images/badge-kotlin.svg" />
+            <Image width={59} height={18} className="h-5" alt="MQTT" src="/images/badge-mqtt.svg" />
           </div>
         </div>
 
