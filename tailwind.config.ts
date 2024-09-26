@@ -15,7 +15,6 @@ const config: Config = {
     },
   },
   plugins: [require('daisyui')],
-  basePath: '/public'
 };
 
 
